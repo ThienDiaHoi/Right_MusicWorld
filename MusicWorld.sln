@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		ReadMe.txt = ReadMe.txt
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdminMusicWorld", "AdminMusicWorld\AdminMusicWorld.csproj", "{835663B2-C958-4572-881A-F67F9195AB82}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{FBACF962-9EA3-4062-B1FF-D899E5948B2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBACF962-9EA3-4062-B1FF-D899E5948B2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBACF962-9EA3-4062-B1FF-D899E5948B2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{835663B2-C958-4572-881A-F67F9195AB82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{835663B2-C958-4572-881A-F67F9195AB82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{835663B2-C958-4572-881A-F67F9195AB82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{835663B2-C958-4572-881A-F67F9195AB82}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
