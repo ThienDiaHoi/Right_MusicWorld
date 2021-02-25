@@ -17,5 +17,10 @@ namespace MusicWorld.Controllers
         {
             return View();
         }
+
+        public IActionResult Table()
+        {
+            return View();
+        }
     }
 }
