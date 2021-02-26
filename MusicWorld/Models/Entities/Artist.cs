@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MusicWorld.Models.Entities
 {
-    public class Artists
+    public class Artist
     {
         public int Id { get; set; }
         public string Name { get; set; }

@@ -18,6 +18,6 @@ namespace MusicWorld.Models.Entities
         public string ReleaseDate { get; set; }
 
         public ICollection<Song> Songs { get; set; }
-        public ICollection<Artists> Artists { get; set; }
+        public ICollection<Artist> Artists { get; set; }
     }
 }

@@ -210,9 +210,9 @@ namespace MusicWorld.Models
             {
                 return;
             }
-            var artists = new Artists[]
+            var artists = new Artist[]
                {
-                    new Artists
+                    new Artist
                         {
                                 Name = "Michael Jackson",
                                 Birthday = "29/8/1958",
@@ -221,7 +221,7 @@ namespace MusicWorld.Models
                                 UrlImage = "MichaelJackson.jpg",
                                 EventId = events.Single(e=> e.Title == "This Is It").Id
                         },
-                        new Artists
+                        new Artist
                         {
                             Name = "Whitney Houston",
                                 Birthday = "9/8/1963",
@@ -230,7 +230,7 @@ namespace MusicWorld.Models
                                 UrlImage = "WhitneyHouston.jpg",
                                 EventId = events.Single(e=> e.Title == "Pacific Rim Tour").Id
                         },
-                        new Artists
+                        new Artist
                         {
                             Name = "George Michael",
                                 Birthday = "25/6/1963",
@@ -239,7 +239,7 @@ namespace MusicWorld.Models
                                 UrlImage = "GeorgeMichael.jpg",
                                 EventId = events.Single(e=> e.Title == "25 Live").Id
                         },
-                        new Artists
+                        new Artist
                         {
                             Name = "Christina María Aguilera ",
                                 Birthday = "18/12/1980",
@@ -248,7 +248,7 @@ namespace MusicWorld.Models
                                 UrlImage = "ChristinaMaríaAguilera.jpg",
                                 EventId = events.Single(e=> e.Title == "Back to Basics Tour").Id
                         },
-                        new Artists
+                        new Artist
                         {
                             Name = "Lady Gaga",
                                 Birthday = "28/3/1985",
@@ -257,7 +257,7 @@ namespace MusicWorld.Models
                                 UrlImage = "LadyGaga.jpg",
                                 EventId = events.Single(e=> e.Title == "The Fame Ball Tour").Id
                         },
-                        new Artists
+                        new Artist
                         {
                             Name = "BinZ",
                                 Birthday = "24/5/1988",
@@ -266,7 +266,7 @@ namespace MusicWorld.Models
                                 UrlImage = "Binz.jpg",
                                 EventId = events.Single(e=> e.Title == "GaLa Nimo TV").Id
                         },
-                        new Artists
+                        new Artist
                         {
                             Name = "Karik",
                                 Birthday = "12/4/1989",
@@ -275,7 +275,7 @@ namespace MusicWorld.Models
                                 UrlImage = "Karik.jpg",
                                 EventId = events.Single(e=> e.Title == "Beyond The Future 2020").Id
                         },
-                        new Artists
+                        new Artist
                         {
                             Name = "Rhymastic",
                                 Birthday = "8/4/1991",
@@ -285,7 +285,7 @@ namespace MusicWorld.Models
                                 EventId = events.Single(e=> e.Title == "Shopee 11.11").Id
                         },
 
-                        new Artists
+                        new Artist
                         {
                             Name = "Justatee",
                                 Birthday = "1/11/1991",
@@ -294,7 +294,7 @@ namespace MusicWorld.Models
                                 UrlImage = "Justatee.jpg",
                                 EventId = events.Single(e=> e.Title == "GaLa Nimo TV").Id
                         },
-                        new Artists
+                        new Artist
                         {
                             Name = "Đen Vâu",
                                 Birthday = "13/5/1989",
@@ -303,7 +303,7 @@ namespace MusicWorld.Models
                                 UrlImage = "Denvau.jpg",
                                 EventId = events.Single(e=> e.Title == "WeChoice Awards 2019").Id
                         },
-                        new Artists
+                        new Artist
                         {
                             Name = "Wowy",
                                 Birthday = "27/9/1988",
@@ -312,7 +312,7 @@ namespace MusicWorld.Models
                                 UrlImage = "Wowy.jpg",
                                 EventId = events.Single(e=> e.Title == "Elle Show 2020").Id
                         },
-                        new Artists {
+                        new Artist {
                           Name = "Hồ Trung Dũng",
                             Birthday = "12/1/1982",
                             Gender = "Nam",
@@ -320,7 +320,7 @@ namespace MusicWorld.Models
                             UrlImage = "Hotrungdung.jpg",
                             EventId = events.Single(e => e.Title == "CountDown").Id
                         },
-                        new Artists {
+                        new Artist {
                           Name = "Trần Mạnh Tuấn",
                             Birthday = "7/5/1970",
                             Gender = "Nam",
@@ -328,7 +328,7 @@ namespace MusicWorld.Models
                             UrlImage = "Tranmanhtuan.jpg",
                             EventId = events.Single(e => e.Title == "CountDown").Id
                         },
-                        new Artists {
+                        new Artist {
                           Name = "Imagine Dragons",
                             Birthday = "1/1/2012",
                             Gender = "Nam",
@@ -336,7 +336,7 @@ namespace MusicWorld.Models
                             UrlImage = "ImagineDragons.jpg",
                             EventId = events.Single(e => e.Title == "Đại Nhạc Hội REALME").Id
                         },
-                        new Artists {
+                        new Artist {
                           Name = "Đức Tuấn",
                             Birthday = "2/6/1980",
                             Gender = "Nam",
@@ -344,7 +344,7 @@ namespace MusicWorld.Models
                             UrlImage = "Ductuan.jpg",
                             EventId = events.Single(e => e.Title == "Đại Nhạc Hội REALME").Id
                         },
-                        new Artists {
+                        new Artist {
                           Name = "Trần Lập",
                             Birthday = "12/12/1974",
                             Gender = "Nam",
@@ -352,7 +352,7 @@ namespace MusicWorld.Models
                             UrlImage = "TranLap.jpg",
                             EventId = events.Single(e => e.Title == "Đại Nhạc Hội TP.BANK").Id
                         },
-                        new Artists {
+                        new Artist {
                           Name = "Ngọt",
                             Birthday = "1/1/2013",
                             Gender = "Nam",
@@ -360,7 +360,7 @@ namespace MusicWorld.Models
                             UrlImage = "Ngot.jpg",
                             EventId = events.Single(e => e.Title == "Đại Nhạc Hội TP.BANK").Id
                         },
-                        new Artists {
+                        new Artist {
                           Name = "Mr.siro",
                             Birthday = " 18/11/1982",
                             Gender = "Nam",
@@ -368,7 +368,7 @@ namespace MusicWorld.Models
                             UrlImage = "mrsiro.jpg",
                             EventId = events.Single(e => e.Title == "Music Awards").Id
                         },
-                        new Artists {
+                        new Artist {
                           Name = "Trung Quân",
                             Birthday = "20/1/1989",
                             Gender = "Nam",
@@ -376,7 +376,7 @@ namespace MusicWorld.Models
                             UrlImage = "trungquan.jpg",
                             EventId = events.Single(e => e.Title == "Music Awards").Id
                         },
-                        new Artists {
+                        new Artist {
                           Name = "Bích Phương",
                             Birthday = "30/9/1989",
                             Gender = "Nữ",
@@ -384,7 +384,7 @@ namespace MusicWorld.Models
                             UrlImage = "bichphuong.jpg",
                             EventId = events.Single(e => e.Title == "Dạ khúc cho tình nhân").Id
                         },
-                        new Artists {
+                        new Artist {
                           Name = "Soobin Hoàng Sơn",
                             Birthday = "10/9/1992",
                             Gender = "Nữ",
@@ -392,7 +392,7 @@ namespace MusicWorld.Models
                             UrlImage = "soobinhoangson.jpg",
                             EventId = events.Single(e => e.Title == "Dạ khúc cho tình nhân").Id
                         },
-                        new Artists
+                        new Artist
                         {
                                 Name = "YO YO MA",
                                 Birthday = "7/10/1955",
@@ -400,7 +400,7 @@ namespace MusicWorld.Models
                                 UrlImage = "yoma.jpg",
                                  EventId = events.Single(e=> e.Title == "Kỉ Niệm 151 năm Sinh LEHAR").Id
                         },
-                        new Artists
+                        new Artist
                         {
                                 Name = "Jacques Loussier Trio",
                                 Birthday = "26/10/1934",
@@ -408,7 +408,7 @@ namespace MusicWorld.Models
                                 UrlImage = "trio.jpg",
                                 EventId = events.Single(e=> e.Title == "Kỉ Niệm 188 năm sinh BARAHMS").Id
                         },
-                        new Artists
+                        new Artist
                         {
                              Name = "Artur Rubinstein",
                                 Birthday = "28/1/1887",
@@ -416,7 +416,7 @@ namespace MusicWorld.Models
                                 UrlImage = "rubinstein.jpg",
                                 EventId = events.Single(e=> e.Title == "Kỉ Niệm 188 năm sinh MASSENET").Id
                         },
-                        new Artists
+                        new Artist
                         {
                              Name = "Jean François Paillard",
                                 Birthday = "14/4/1928",
@@ -424,7 +424,7 @@ namespace MusicWorld.Models
                                 UrlImage = "paillard.jpg",
                                 EventId = events.Single(e=> e.Title == "Kỉ Niệm 188 năm sinh ALBENIZ").Id
                         },
-                        new Artists
+                        new Artist
                         {
                             Name = "Alicia De Larrocha",
                                 Birthday = "23/5/1923",
@@ -434,7 +434,7 @@ namespace MusicWorld.Models
                         }
                 };
 
-            foreach (Artists a in artists)
+            foreach (Artist a in artists)
             {
                 context.Artists.Add(a);
             }

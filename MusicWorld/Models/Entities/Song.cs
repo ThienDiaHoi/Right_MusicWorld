@@ -1,11 +1,10 @@
-﻿using MusicWorld.Models.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MusicWorld.Models
+namespace MusicWorld.Models.Entities
 {
     public class Song
     {
@@ -14,11 +13,13 @@ namespace MusicWorld.Models
 
         public string Category { get; set; }
         public string Author { get; set; }
+
         [Display(Name = "Image")]
         public string UrlImage { get; set; }
+
         public string UrlMp3 { get; set; }
         public int ArtistsId { get; set; }
-        public Artists Artists { get; set; }
+        public Artist Artists { get; set; }
 
         public int AlbumsId { get; set; }
         public Album Albums { get; set; }

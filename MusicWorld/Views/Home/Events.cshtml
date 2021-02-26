@@ -1,16 +1,12 @@
-﻿@{
-    Layout = "_EventsLayout";
-}
+﻿@{ Layout = "_EventsLayout"; }
 @model ProductListViewModel
 <!-- ##### Breadcumb Area End ##### -->
 <!-- ##### Events Area Start ##### -->
 <section class="events-area section-padding-100">
     <div class="container">
         <div class="row">
-            @foreach (Event item in Model.Events)
-            {
-
-                <!-- Single Event Area -->
+            @foreach (var item in Model.Events)
+            {<!-- Single Event Area -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-event-area mb-30">
                         <div class="event-thumbnail">
@@ -25,10 +21,7 @@
                             <a href="#" class="btn see-more-btn">See Event</a>
                         </div>
                     </div>
-                </div>
-
-            }
-
+                </div>            }
         </div>
 
         <div class="row">
@@ -94,7 +87,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </section>

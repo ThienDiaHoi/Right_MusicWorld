@@ -9,8 +9,6 @@ namespace MusicWorld.Models.Entities
     public class Event
     {
         public int Id { get; set; }
-
-        [Required]
         public string Title { get; set; }
 
         public string Description { get; set; }
@@ -21,6 +19,6 @@ namespace MusicWorld.Models.Entities
         [Display(Name = "Image")]
         public string UrlImage { get; set; }
 
-        public ICollection<Artists> Artists { get; set; }
+        public ICollection<Artist> Artists { get; set; }
     }
 }
