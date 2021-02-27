@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /*!
 * Start Bootstrap - SB Admin v6.0.2 (https://startbootstrap.com/template/sb-admin)
 * Copyright 2013-2020 Start Bootstrap
@@ -10189,10 +10189,13 @@ body {
   padding: 0.75rem;
   flex-shrink: 0;
 }
-
+.DetailCRUD {
+    position: relative;
+    width: 15%;
+}
 .sb-sidenav-dark {
-  background-color: #212529;
-  color: rgba(255, 255, 255, 0.5);
+    background-color: #212529;
+    color: rgba(255, 255, 255, 0.5);
 }
 .sb-sidenav-dark .sb-sidenav-menu .sb-sidenav-menu-heading {
   color: rgba(255, 255, 255, 0.25);
@@ -10246,4 +10249,35 @@ body {
 }
 .sb-sidenav-light .sb-sidenav-footer {
   background-color: #e9ecef;
+}
+@media only screen and (min-width: 2560px) {
+    .albums {
+        position: relative;
+        width: 20%;
+    }
+    
+}
+@media only screen and (min-width: 1980px) {
+    .albums {
+        position: relative;
+        width: 35%;
+    }
+}
+@media only screen and (min-width: 1440px) {
+    .albums {
+        position: relative;
+        width: 38%;
+    }
+}
+@media only screen and (min-width: 1366px) {
+    .albums {
+        position: relative;
+        width: 38%;
+    }
+}
+@media only screen and (max-width: 1024px) {
+    .albums {
+        position: relative;
+        width: 63%;
+    }
 }

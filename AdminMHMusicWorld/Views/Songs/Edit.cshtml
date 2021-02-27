@@ -1,0 +1,61 @@
+﻿@model MusicWorld.Models.Entities.Song
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Song</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Category" class="control-label"></label>
+                <input asp-for="Category" class="form-control" />
+                <span asp-validation-for="Category" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Author" class="control-label"></label>
+                <input asp-for="Author" class="form-control" />
+                <span asp-validation-for="Author" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UrlImage" class="control-label"></label>
+                <input asp-for="UrlImage" class="form-control" />
+                <span asp-validation-for="UrlImage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UrlMp3" class="control-label"></label>
+                <input asp-for="UrlMp3" class="form-control" />
+                <span asp-validation-for="UrlMp3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ArtistsId" class="control-label"></label>
+                <select asp-for="ArtistsId" class="form-control" asp-items="ViewBag.ArtistsId"></select>
+                <span asp-validation-for="ArtistsId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AlbumsId" class="control-label"></label>
+                <select asp-for="AlbumsId" class="form-control" asp-items="ViewBag.AlbumsId"></select>
+                <span asp-validation-for="AlbumsId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
