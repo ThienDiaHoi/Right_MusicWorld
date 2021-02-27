@@ -27,5 +27,10 @@ namespace MusicWorld.Controllers
         {
             return View();
         }
+
+        public IActionResult Tab()
+        {
+            return View();
+        }
     }
 }
