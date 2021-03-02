@@ -1,0 +1,12 @@
+﻿@model Event
+
+<form id="@Model.Title" asp-page="Cart" method="post" style="margin-top:15px;">
+    <input type="hidden" asp-for="Title" />
+    <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+
+    <button type="submit" class="btn btn-success btn-sm">
+        Add To Cart
+    </button>
+
+</form>
+
