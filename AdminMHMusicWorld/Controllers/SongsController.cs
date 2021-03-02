@@ -20,8 +20,15 @@ namespace AdminMHMusicWorld.Controllers
         }
 
         // GET: Songs
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string keyword)
         {
+            if (keyword != null)
+            {
+                ViewBag.Keyword = keyword;
+                var result = await _context.Songs.Where(x => x.Title.Contains(keyword) 
+                || x.Artists.Name.Contains(keyword)).ToListAsync();
+                return View(result);
+            }
             var musicDbContext = _context.Songs.Include(s => s.Albums).Include(s => s.Artists);
             return View(await musicDbContext.ToListAsync());
         }

@@ -18,7 +18,6 @@ namespace MusicWorld.Models.Configurations
             builder.Property(x => x.Name).HasMaxLength(100).IsRequired();
             builder.Property(x => x.Contact).HasMaxLength(200);
             builder.Property(x => x.UrlImage).IsRequired();
-
             builder.HasOne(x => x.Events).WithMany(x => x.Artists).HasForeignKey(x => x.EventId);
         }
     }
