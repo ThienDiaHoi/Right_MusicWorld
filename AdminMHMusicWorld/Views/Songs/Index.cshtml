@@ -5,11 +5,30 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Song</h1>
+<h1>Danh sách Bài hát</h1>
 
-<p>
-    <button class="btn btn-success" asp-action="Create">Create New</button>
-</p>
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-md-6 col-sm-12">
+            <p>
+                <a asp-action="Create" class="btn btn-success">Tạo mới</a>
+            </p>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <form asp-action="Index" method="get">
+                <div class="row">
+                    <div class="col-md-8">
+                        <input method="get" type="text" name="keyword" class="form-control" value="@ViewBag.Keyword" />
+                    </div>
+                    <div class="col-md-4">
+                        <button class="btn btn-success" type="submit">Tìm</button>
+                        <button class="btn btn-dark" type="button" onclick="window.location.href='Songs/Index'">Reset</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 <table class="table">
     <thead>
         <tr>
@@ -26,14 +45,9 @@
                 @Html.DisplayNameFor(model => model.UrlImage)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.UrlMp3)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Artists)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Albums)
-            </th>
+         
             <th class="DetailCRUD"></th>
         </tr>
     </thead>
@@ -53,14 +67,9 @@
                 <td>
                     <img src="~/img/Music/Classical/@Html.DisplayFor(modelItem => item.UrlImage)" class="albums" alt="Alternate Text" />
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.UrlMp3)
-                </td>
+             
                 <td>
                     @Html.DisplayFor(modelItem => item.Artists.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Albums.Title)
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

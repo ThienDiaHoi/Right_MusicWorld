@@ -12,9 +12,9 @@ namespace MusicWorld.Models.Entities
         public string Title { get; set; }
 
         public string Description { get; set; }
-        public string TicketPrice { get; set; }
+        public Decimal TicketPrice { get; set; }
         public string Place { get; set; }
-        public string StartingDate { get; set; }
+        public DateTime StartingDate { get; set; }
 
         [Display(Name = "Image")]
         public string UrlImage { get; set; }

@@ -142,8 +142,8 @@ namespace MusicWorld.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
-                    b.Property<string>("ReleaseDate")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("ReleaseDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -259,8 +259,8 @@ namespace MusicWorld.Migrations
                         .HasAnnotation("SqlServer:IdentitySeed", 1)
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Birthday")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("Birthday")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Contact")
                         .HasMaxLength(200)
@@ -304,11 +304,11 @@ namespace MusicWorld.Migrations
                     b.Property<string>("Place")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("StartingDate")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("StartingDate")
+                        .HasColumnType("datetime2");
 
-                    b.Property<string>("TicketPrice")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<decimal>("TicketPrice")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("Title")
                         .IsRequired()
