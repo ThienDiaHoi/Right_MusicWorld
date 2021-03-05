@@ -1,0 +1,74 @@
+﻿@model IEnumerable<MusicWorld.Models.Entities.Album>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Danh sách Album</h1>
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-md-6 col-sm-12">
+            <p>
+                <a asp-action="Create" class="btn btn-success">Tạo mới</a>
+            </p>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <form asp-action="Index" method="get">
+                <div class="row">
+                    <div class="col-md-8">
+                        <input method="get" type="text" name="keyword" class="form-control" value="@ViewBag.Keyword" />
+                    </div>
+                    <div class="col-md-4">
+                        <button class="btn btn-success" type="submit">Tìm</button>
+                        <button class="btn btn-dark" type="button" onclick="window.location.href='Albums/Index'">Reset</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UrlImage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReleaseDate)
+            </th>
+            <th class="DetailCRUD"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td style="position:relative; width:20%">
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    <img src="~/img/Music/Classical/@Html.DisplayFor(modelItem => item.UrlImage)" class="albums" alt="Alternate Text" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReleaseDate)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

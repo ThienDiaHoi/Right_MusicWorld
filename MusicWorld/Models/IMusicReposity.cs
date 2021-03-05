@@ -9,9 +9,9 @@ namespace MusicWorld.Models
     public interface IMusicReposity
     {
         IQueryable<Song> Songs { get; }
-        IQueryable<Artists> Artists { get; }
+        IQueryable<Artist> Artists { get; }
         IQueryable<Album> Albums { get; }
         IQueryable<Event> Events { get; }
-        IQueryable<User> Users { get; }
+        //IQueryable<User> Users { get; }
     }
 }

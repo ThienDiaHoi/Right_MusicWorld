@@ -16,9 +16,9 @@ namespace MusicWorld.Models
         }
 
         public IQueryable<Song> Songs => context.Songs;
-        public IQueryable<Artists> Artists => context.Artists;
+        public IQueryable<Artist> Artists => context.Artists;
         public IQueryable<Album> Albums => context.Albums;
         public IQueryable<Event> Events => context.Events;
-        public IQueryable<User> Users => context.Users;
+        //public IQueryable<User> Users => context.Users;
     }
 }

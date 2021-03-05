@@ -11,7 +11,7 @@ namespace MusicWorld.Models.ViewModel
         public IEnumerable<Song> Songs { get; set; }
         public IEnumerable<Album> Albums { get; set; }
         public IEnumerable<Event> Events { get; set; }
-        public IEnumerable<Artists> Artists { get; set; }
+        public IEnumerable<Artist> Artists { get; set; }
 
         public string CurrentCategory { get; set; }
     }
