@@ -16,10 +16,10 @@
         @foreach ( var line in Model.Cart.Lines)
             {
         <tr>
-            @*<td class="text-center">@line.Quantity</td>
+            <td class="text-center">@line.Quantity</td>
             <td class="text-left">@line.Event.Title</td>
-            <td class="text-right">@line.Event.TicketPrice.ToString()</td>*@
-            @*<td class="text-right">@((line.Quantity * line.Event.Id).ToString("c"))</td>*@
+            <td class="text-right">@line.Event.TicketPrice.ToString()</td>
+            <td class="text-right">@((line.Quantity * line.Event.Id).ToString("c"))</td>
         </tr>
             }      
     </tbody>
