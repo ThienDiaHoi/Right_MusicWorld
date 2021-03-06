@@ -34,8 +34,8 @@ namespace MusicWorld.Models.ViewModel
         public void RemoveLine(Event events) =>
             Lines.RemoveAll(l => l.Event.Title == events.Title);
 
-        public decimal ComputeTotalValue() =>
-            Lines.Sum(e => e.Event.Id * e.Quantity);
+        //public decimal ComputeTotalValue() =>
+            //Lines.Sum(e => e.Event.Id * e.Quantity);
 
         public void Clear() => Lines.Clear();
 

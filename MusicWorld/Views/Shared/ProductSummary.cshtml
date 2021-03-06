@@ -1,12 +1,30 @@
 ﻿@model Event
 
-<form id="@Model.Title" asp-page="Cart" method="post" style="margin-top:15px;">
-    <input type="hidden" asp-for="Title" />
-    <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+<div class="col-12 col-md-6 col-lg-4">
+    <div class="single-event-area mb-30">
+        <div class="event-thumbnail">
+            <img src="~/img/Music/Classical/@Model.UrlImage" alt="">
+        </div>
+        <div class="event-text">
+            <h4>@Model.Title</h4>
+            <div class="event-meta-data">
+                <a href="#" class="event-place">@Model.Place</a>
+                <a href="#" class="event-date">@Model.StartingDate</a>
+            </div>
+            <a href="#" class="btn see-more-btn">See Event</a>
 
-    <button type="submit" class="btn btn-success btn-sm">
-        Add To Cart
-    </button>
+            <form id="@Model.Title" asp-page="/Cart" method="post" style="margin-top:15px;">
+                <input type="hidden" asp-for="Title" />
+                <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
 
-</form>
+                <button type="submit" class="btn btn-success btn-sm">
+                    Add To Cart
+                </button>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
 

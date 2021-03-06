@@ -29,10 +29,10 @@ namespace MusicWorld.Pages
             Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
         }
 
-        public IActionResult OnPost(string titleID, string returnUrl)
+        public IActionResult OnPost(long eventID, string returnUrl)
         {
             Event title = repository.Events
-                .FirstOrDefault(p => p.Title == titleID);
+                .FirstOrDefault(p => p.Id == eventID);
             Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
             Cart.AddItem(title, 1);
             HttpContext.Session.SetJson("cart", Cart);
