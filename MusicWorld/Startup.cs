@@ -41,6 +41,9 @@ namespace MusicWorld
             services.AddTransient<UserManager<AppUser>, UserManager<AppUser>>();
             services.AddTransient<SignInManager<AppUser>, SignInManager<AppUser>>();
             services.AddTransient<RoleManager<AppRole>, RoleManager<AppRole>>();
+            services.AddDistributedMemoryCache();
+            services.AddSession();
+            services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,6 +52,7 @@ namespace MusicWorld
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseSession();
             }
             else
             {
@@ -68,6 +72,8 @@ namespace MusicWorld
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+                endpoints.MapRazorPages();
             });
             SeedData.EnsurePopulate(app);
         }

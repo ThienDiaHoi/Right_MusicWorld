@@ -7,21 +7,9 @@
         <div class="row">
             @foreach (var item in Model.Events)
             {<!-- Single Event Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-event-area mb-30">
-                        <div class="event-thumbnail">
-                            <img src="~/img/Music/Classical/@item.UrlImage" alt="">
-                        </div>
-                        <div class="event-text">
-                            <h4>@item.Title</h4>
-                            <div class="event-meta-data">
-                                <a href="#" class="event-place">@item.Place</a>
-                                <a href="#" class="event-date">@item.StartingDate</a>
-                            </div>
-                            <a href="#" class="btn see-more-btn">See Event</a>
-                        </div>
-                    </div>
-                </div>            }
+                
+                <partial name="ProductSummary" model="item" />
+            }
         </div>
 
         <div class="row">
