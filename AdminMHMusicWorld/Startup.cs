@@ -1,3 +1,4 @@
+using Application.Common;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -27,7 +28,7 @@ namespace AdminMHMusicWorld
         {
             services.AddDbContext<MusicDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("MusicWorlkConnection")));
-
+            services.AddTransient<IStorageService, FileStorageService>();
             IMvcBuilder builder = services.AddRazorPages();
             var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
 

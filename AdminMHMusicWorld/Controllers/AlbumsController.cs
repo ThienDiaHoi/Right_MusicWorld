@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using Application.Common;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -13,10 +17,11 @@ namespace AdminMHMusicWorld.Controllers
     public class AlbumsController : Controller
     {
         private readonly MusicDbContext _context;
-
-        public AlbumsController(MusicDbContext context)
+        private readonly IStorageService _storageService;
+        public AlbumsController(MusicDbContext context, IStorageService storageService)
         {
             _context = context;
+            _storageService = storageService;
         }
 
         // GET: Albums
@@ -61,11 +66,16 @@ namespace AdminMHMusicWorld.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Description,UrlImage,ReleaseDate")] Album album)
+        public async Task<IActionResult> Create([Bind("Id,Title,Description,UrlImage,ReleaseDate")] Album album, IFormFile imageFile)
         {
             if (ModelState.IsValid)
             {
+                if(album.UrlImage == null)
+                {
+                    album.UrlImage =await this.SaveFile(imageFile);
+                }
                 _context.Add(album);
+                
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
@@ -155,6 +165,13 @@ namespace AdminMHMusicWorld.Controllers
         private bool AlbumExists(int id)
         {
             return _context.Albums.Any(e => e.Id == id);
+        }
+        private async Task<string> SaveFile(IFormFile file)
+        {
+            var originalFileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+            var fileName = $"{Guid.NewGuid()}{Path.GetExtension(originalFileName)}";
+            await _storageService.SaveFileAsync(file.OpenReadStream(), fileName);
+            return fileName;
         }
     }
 }
