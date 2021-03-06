@@ -13,8 +13,8 @@
             </div>
             <a href="#" class="btn see-more-btn">See Event</a>
 
-            <form id="@Model.Title" asp-page="/Cart" method="post" style="margin-top:15px;">
-                <input type="hidden" asp-for="Title" />
+            <form id="@Model.Id" asp-page="/Cart" method="post" style="margin-top:15px;">
+                <input type="hidden" asp-for="@Model.Title" name="eventID" value="@Model.Id"/>
                 <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
 
                 <button type="submit" class="btn btn-success btn-sm">
