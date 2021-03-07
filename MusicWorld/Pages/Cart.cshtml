@@ -10,6 +10,7 @@
             <th>Item</th>
             <th class="text-right">Price</th>
             <th class="text-right">Subtotal</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -19,18 +20,26 @@
             <td class="text-center">@line.Quantity</td>
             <td class="text-left">@line.Event.Title</td>
             <td class="text-right">@line.Event.TicketPrice.ToString()</td>
-            <td class="text-right">@((line.Quantity * line.Event.Id).ToString("c"))</td>
+            <td class="text-right">@((line.Quantity * line.Event.TicketPrice).ToString("c"))</td>
+            <td class="text-right">
+                @*<form asp-page-handler="Remove" method="post">
+                    <input hidden="hidden" name="eventID" value="@line.Event.Id" />
+                    <input hidden="hidden" name="ReturnUrl" value="@Model.ReturnUrl" />
+                    <button class="glyphicon glyphicon-remove btn btn-danger" type="submit"></button>
+                </form>*@
+            </td>
+           
         </tr>
             }      
     </tbody>
     <tfoot>
         <tr>
             <td colspan="3" class="text-right">Total:</td>
-            @*<td class="text-right">@Model.Cart.ComputeTotalValue().ToString("c")</td>*@
+            <td class="text-right">@Model.Cart.ComputeTotalValue().ToString("c")</td>
         </tr>
     </tfoot>
 </table>
 
 <div class="text-center">
-    <a class="btn btn-primary" href="@Model.ReturnUrl">Continue to MUSIC WORLD</a>
+    <a class="btn btn-primary" href="@Model.ReturnUrl">Continue to Events</a>
 </div>

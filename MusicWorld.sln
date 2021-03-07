@@ -20,8 +20,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ViewModels", "ViewModels\Vi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoginApp", "LoginApp\LoginApp.csproj", "{7DD0CC53-5A5A-499B-B1D6-03AD0CDDA02B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdminMusicWorld", "AdminMusicWorld\AdminMusicWorld.csproj", "{4C640150-1954-41C7-BCFD-557CEED8AA2B}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -52,10 +50,6 @@ Global
 		{7DD0CC53-5A5A-499B-B1D6-03AD0CDDA02B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7DD0CC53-5A5A-499B-B1D6-03AD0CDDA02B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7DD0CC53-5A5A-499B-B1D6-03AD0CDDA02B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4C640150-1954-41C7-BCFD-557CEED8AA2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4C640150-1954-41C7-BCFD-557CEED8AA2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4C640150-1954-41C7-BCFD-557CEED8AA2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4C640150-1954-41C7-BCFD-557CEED8AA2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

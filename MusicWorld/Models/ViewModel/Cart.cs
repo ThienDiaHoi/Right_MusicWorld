@@ -31,11 +31,14 @@ namespace MusicWorld.Models.ViewModel
             }
         }
 
-        public void RemoveLine(Event events) =>
-            Lines.RemoveAll(l => l.Event.Title == events.Title);
+        public void RemoveLine(Event events)
+        {
+            Lines.RemoveAll(l => l.Event.Id == events.Id);
+        }
+           
 
-        //public decimal ComputeTotalValue() =>
-            //Lines.Sum(e => e.Event.Id * e.Quantity);
+        public decimal ComputeTotalValue() =>
+            Lines.Sum(e => e.Event.TicketPrice * e.Quantity);
 
         public void Clear() => Lines.Clear();
 

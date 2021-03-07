@@ -13,6 +13,7 @@ namespace MusicWorld.Controllers
     public class HomeController : Controller
     {
         private IMusicReposity repository;
+        public List<CartLine> Lines { get; set; } = new List<CartLine>();
 
         public HomeController( IMusicReposity repo)
         {
@@ -112,5 +113,6 @@ namespace MusicWorld.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
     }
 }

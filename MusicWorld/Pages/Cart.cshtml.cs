@@ -38,6 +38,13 @@ namespace MusicWorld.Pages
             HttpContext.Session.SetJson("cart", Cart);
             return RedirectToPage(new { returnUrl = returnUrl });
         }
+        public IActionResult OnPostRemove(long eventID, string returnUrl)
+        {
+            var carts = HttpContext.Session.GetJson<Cart>("cart");
+            carts.RemoveLine(Cart.Lines.First(c => c.Event.Id == eventID).Event);
+            return RedirectToPage(new { returnUrl = returnUrl });
+        }
+
     }
 }
 
