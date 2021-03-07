@@ -93,19 +93,10 @@ namespace MusicWorld.Controllers
         public IActionResult Events() => View(
             new ProductListViewModel
             {
-
-                Songs = repository.Songs
-                .OrderBy(a => a.Id)
-                .Take(6),
                 Events = repository.Events
                 .OrderBy(a => a.Id)
-                ,
-                Albums = repository.Albums
-                .OrderBy(a => a.Id)
-                .Take(12),
-                Artists = repository.Artists
-                .OrderBy(a => a.Id)
-                .Take(6)
+                
+
             });
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
