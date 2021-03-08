@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace MusicWorld.Models
 {
-    public class MusicDbContext : IdentityDbContext<AppUser, AppRole, Guid>
+    public class MusicDbContext : IdentityDbContext
     {
         public MusicDbContext(DbContextOptions<MusicDbContext> options) : base(options)
         {
@@ -18,21 +18,15 @@ namespace MusicWorld.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             //Configuration fluent Api
-            modelBuilder.ApplyConfiguration(new AppUserConfiguration());
-            modelBuilder.ApplyConfiguration(new AppRoleCongiguration());
+        
             modelBuilder.ApplyConfiguration(new SongConfiguration());
             modelBuilder.ApplyConfiguration(new AlbumConfiguration());
             modelBuilder.ApplyConfiguration(new ArtistConfiguration());
 
             modelBuilder.ApplyConfiguration(new EventConfiguration());
 
-            modelBuilder.Entity<IdentityUserClaim<Guid>>().ToTable("AppUserClaims");
-            modelBuilder.Entity<IdentityUserRole<Guid>>().ToTable("AppUserRoles").HasKey(x => new { x.UserId, x.RoleId });
-            modelBuilder.Entity<IdentityUserLogin<Guid>>().ToTable("AppUserLogins").HasKey(x => x.UserId);
-
-            modelBuilder.Entity<IdentityRoleClaim<Guid>>().ToTable("AppRoleClaims");
-            modelBuilder.Entity<IdentityUserToken<Guid>>().ToTable("AppUserTokens").HasKey(x => x.UserId);
             modelBuilder.Entity<Song>().ToTable("Songs");
             modelBuilder.Entity<Artist>().ToTable("Artists");
             modelBuilder.Entity<Event>().ToTable("Events");

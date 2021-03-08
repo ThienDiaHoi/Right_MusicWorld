@@ -12,6 +12,5 @@ namespace MusicWorld.Models
         IQueryable<Artist> Artists { get; }
         IQueryable<Album> Albums { get; }
         IQueryable<Event> Events { get; }
-        //IQueryable<User> Users { get; }
     }
 }

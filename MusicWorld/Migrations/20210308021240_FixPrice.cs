@@ -2,7 +2,7 @@
 
 namespace MusicWorld.Migrations
 {
-    public partial class newDataa : Migration
+    public partial class FixPrice : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

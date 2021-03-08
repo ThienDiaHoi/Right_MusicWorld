@@ -34,14 +34,7 @@ namespace MusicWorld
                 opts.UseSqlServer(
                     Configuration["ConnectionStrings:MusicWorlkConnection"]);
             });
-            services.AddIdentity<AppUser, AppRole>()
-            .AddEntityFrameworkStores<MusicDbContext>()
-            .AddDefaultTokenProviders();
             services.AddScoped<IMusicReposity, EFMusicRepository>();
-            services.AddTransient<UserManager<AppUser>, UserManager<AppUser>>();
-            services.AddTransient<SignInManager<AppUser>, SignInManager<AppUser>>();
-            services.AddTransient<RoleManager<AppRole>, RoleManager<AppRole>>();
-            services.AddDistributedMemoryCache();
             services.AddSession();
             services.AddRazorPages();
             IMvcBuilder builder = services.AddRazorPages();
