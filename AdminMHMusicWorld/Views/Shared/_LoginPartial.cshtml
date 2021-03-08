@@ -9,7 +9,7 @@
     <form asp-controller="Account" asp-action="LogOff"  method="post" id="logoutForm" class="navbar-right form-inline">
         <ul class="nav navbar-nav navbar-right">
             <li>
-                <a href="https://localhost:44301/identity/account/manage/index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
+                <a href="https://localhost:44301/identity/account/manage/index" title="Manage">@UserManager.GetUserName(User)</a>
             </li>
           
         </ul>
