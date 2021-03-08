@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Application.Common;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -14,6 +15,7 @@ using MusicWorld.Models.Entities;
 
 namespace AdminMHMusicWorld.Controllers
 {
+    [Authorize]
     public class AlbumsController : Controller
     {
         private readonly MusicDbContext _context;

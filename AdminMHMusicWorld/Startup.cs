@@ -2,6 +2,7 @@ using Application.Common;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -28,7 +29,15 @@ namespace AdminMHMusicWorld
         {
             services.AddDbContext<MusicDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("MusicWorlkConnection")));
+
             services.AddTransient<IStorageService, FileStorageService>();
+
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                  .AddDefaultTokenProviders()
+                    .AddDefaultUI()
+                    .AddEntityFrameworkStores<MusicDbContext>();
+
+           
             IMvcBuilder builder = services.AddRazorPages();
             var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
 
@@ -39,6 +48,8 @@ namespace AdminMHMusicWorld
             }
 #endif
             services.AddControllersWithViews();
+            services.AddRazorPages();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -58,7 +69,7 @@ namespace AdminMHMusicWorld
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -66,6 +77,7 @@ namespace AdminMHMusicWorld
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Admin}/{action=Index}/{id?}");
+                endpoints.MapRazorPages();
             });
         }
     }

@@ -27,15 +27,7 @@
 </head>
 
 <body>
-    <!-- Preloader -->
-    <div class="preloader d-flex align-items-center justify-content-center">
-        <div class="lds-ellipsis">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
+  
 
     <!-- ##### Header Area Start ##### -->
     <header class="header-area">
@@ -44,10 +36,10 @@
             <div class="classy-nav-container breakpoint-off">
                 <div class="container">
                     <!-- Menu -->
-                    <nav class="classy-navbar justify-content-between" id="oneMusicNav">
+                    <nav class=" justify-content-between" id="oneMusicNav">
 
                         <!-- Nav brand -->
-                        <a asp-action="Index" asp-controller="Home" asp-route-category="" class="nav-brand"><h2 style="color:greenyellow">MUSIC WORLD</h2></a>
+                        <a asp-page="https://localhost:44301/" class="nav-brand"><h2 style="color:greenyellow; text-transform:uppercase">admin page</h2></a>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
@@ -63,54 +55,7 @@
                             </div>
 
                             <!-- Nav Start -->
-                            <div class="classynav">
-                                <ul>
-                                    <li><a asp-action="Index" asp-controller="Home" asp-route-category="">Home</a></li>
-                                    <li><a href="albums-store.html">Albums</a></li>
-                                    <li>
-                                        <a href="#">Pages</a>
-                                        <ul class="dropdown">
-                                            <li><a asp-action="Index" asp-controller="Home" asp-route-category="">Home</a></li>
-                                            <li><a asp-action="Album" asp-controller="Home" asp-route-category="">Albums</a></li>
-                                            <li><a asp-action="Index" asp-controller="Event" asp-route-category="">Events</a></li>
-                                            <li><a asp-action="News" asp-controller="Home" asp-route-category="">News</a></li>
-                                            <li><a asp-action="Contact" asp-controller="Home" asp-route-category="">Contact</a></li>
-                                            <li><a href="elements.html">Elements</a></li>
-                                            <li><a href="login.html">Login</a></li>
-                                            <li>
-                                                <a href="#">Dropdown</a>
-                                                <ul class="dropdown">
-                                                    <li><a href="#">Even Dropdown</a></li>
-                                                    <li><a href="#">Even Dropdown</a></li>
-                                                    <li><a href="#">Even Dropdown</a></li>
-                                                    <li>
-                                                        <a href="#">Even Dropdown</a>
-                                                        <ul class="dropdown">
-                                                            <li><a href="#">Deeply Dropdown</a></li>
-                                                            <li><a href="#">Deeply Dropdown</a></li>
-                                                            <li><a href="#">Deeply Dropdown</a></li>
-                                                            <li><a href="#">Deeply Dropdown</a></li>
-                                                            <li><a href="#">Deeply Dropdown</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="#">Even Dropdown</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a asp-action="Index" asp-controller="Event" asp-route-category="">Events</a></li>
-                                    <li><a asp-action="News" asp-controller="Home" asp-route-category="">News</a></li>
-                                    <li><a asp-action="Contact" asp-controller="Home" asp-route-category="">Contact</a></li>
-                                </ul>
-
-                                <!-- Login/Register & Cart Button -->
-                                <div class="login-register-cart-button d-flex align-items-center">
-                                    <!-- Cart Button -->
-                                    <div class="cart-btn">
-                                        <p><span class="icon-shopping-cart"></span> <span class="quantity">1</span></p>
-                                    </div>
-                                </div>
-                            </div>
+                        
                             <!-- Nav End -->
 
                         </div>
@@ -124,7 +69,7 @@
     <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(/img/bg-img/breadcumb3.jpg);">
         <div class="bradcumbContent">
             <p>See what’s new</p>
-            <h2>Login</h2>
+            <h2>@ViewData["title"]</h2>
         </div>
     </section>
 
@@ -176,6 +121,8 @@
     <script src="/js/plugins/plugins.js"></script>
     <!-- Active js -->
     <script src="/js/active.js"></script>
+    @RenderSection("scripts", required: false)
+
 </body>
 
 </html>
